@@ -1,0 +1,55 @@
+{% extends "ubiquityOSI/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="section secondary-section">
+	<div class="limiter">
+	 <div class="container-login100">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+			<form method="POST" enctype="multipart/form-data" class="login100-form validate-form">
+					{% if user.is_authenticated %}
+						<span class="login100-form-title p-b-49">
+							Create Service/Update Service
+						</span>
+					{% else %}
+						<span class="login100-form-title p-b-49">
+							Create Service
+						</span>
+					{% endif %}
+							{% csrf_token %}
+				<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
+					<fieldset class="form-group">
+						{{ form|crispy }}
+					</fieldset>
+				</div>
+					<br>
+				<div class="form-group">
+					<div class="container-login100-form-btn">
+					<div class="wrap-login100-form-btn">
+					<div class="login100-form-bgbtn"></div>
+					<button class="login100-form-btn" type="submit">
+									Submit Service
+					</button>
+				</div>
+				</div>
+				</div>
+			</form>
+		</div>
+	 </div>
+ </div>
+</div>
+	<div id="dropDownSelect1"></div>
+
+   <!-- Footer section start -->
+        <div class="footer">
+            <p>&copy; 2020 Web App by <a href="#">Knowledge Seekers Group</a></p>
+        </div>
+        <!-- Footer section end -->
+        <!-- ScrollUp button start -->
+        <div class="scrollup">
+            <a href="#">
+                <i class="icon-up-open"></i>
+            </a>
+        </div>
+{% endblock content %}

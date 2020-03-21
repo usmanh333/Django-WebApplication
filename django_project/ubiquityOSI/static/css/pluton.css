@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'porta';
+  src: url(../fonts/pluton.eot?49924914);
+  src: url(../fonts/pluton.eot?49924914#iefix) format('embedded-opentype'),
+       url(../fonts/pluton.woff?49924914) format('woff'),
+       url(../fonts/pluton.ttf?49924914) format('truetype'),
+       url(../fonts/pluton.svg?49924914#porta) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'porta';
+    src: url({% static 'font/porta.svg?49924914#porta' %}) format('svg');
+  }
+}
+
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "porta";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  
+  text-align: center;
+  opacity: .8;
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  
+ 
+  /* you can be more comfortable with increased icons size */
+   font-size: 120%;
+
+
+ 
+  /* Uncomment for 3D effect */
+  text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+}
+
+.icon-plus:before { content: '\e826'; } /* '' */
+.icon-email:before { content: '\e825'; } /* '' */
+.icon-cog:before { content: '\e823'; } /* '' */
+.icon-ok:before { content: '\e80a'; } /* '' */
+.icon-cancel:before { content: '\e80b'; } /* '' */
+.icon-calendar:before { content: '\e10b'; } /* '' */
+.icon-help-circled:before { content: '\e81a'; } /* '' */
+.icon-location:before { content: '\e81b'; } /* '' */
+.icon-left-open:before { content: '\e804'; } /* '' */
+.icon-right-open:before { content: '\e803'; } /* '' */
+.icon-up-open:before { content: '\e805'; } /* '' */
+.icon-menu-1:before { content: '\e800'; } /* '' */
+.icon-link-ext:before { content: '\e822'; } /* '' */
+.icon-menu:before { content: '\e801'; } /* '' */
+.icon-mail-alt:before { content: '\e81c'; } /* '' */
+.icon-angle-left:before { content: '\e81e'; } /* '' */
+.icon-angle-right:before { content: '\e81f'; } /* '' */
+.icon-angle-up:before { content: '\e820'; } /* '' */
+.icon-angle-down:before { content: '\e821'; } /* '' */
+.icon-desktop:before { content: '\e814'; } /* '' */
+.icon-mobile:before { content: '\e81d'; } /* '' */
+.icon-calendar-empty:before { content: '\e802'; } /* '' */
+.icon-github-circled:before { content: '\e811'; } /* '' */
+.icon-vimeo-circled:before { content: '\e808'; } /* '' */
+.icon-twitter-circled:before { content: '\e807'; } /* '' */
+.icon-facebook-circled:before { content: '\e80e'; } /* '' */
+.icon-gplus-circled:before { content: '\e80d'; } /* '' */
+.icon-pinterest-circled:before { content: '\e809'; } /* '' */
+.icon-linkedin-circled:before { content: '\e806'; } /* '' */
+.icon-dribbble-circled:before { content: '\e80f'; } /* '' */
+.icon-stumbleupon-circled:before { content: '\e810'; } /* '' */
+.icon-lastfm-circled:before { content: '\e812'; } /* '' */
+.icon-skype-circled:before { content: '\e813'; } /* '' */
+.icon-globe:before { content: '\e815'; } /* '' */
+.icon-award:before { content: '\e816'; } /* '' */
+.icon-user:before { content: '\e818'; } /* '' */
+.icon-users:before { content: '\e819'; } /* '' */
+.icon-chart-bar:before { content: '\e80c'; } /* '' */
+.icon-phone:before { content: '\e824'; } /* '' */
+.icon-megaphone:before { content: '\e817'; } /* '' */

@@ -1,0 +1,69 @@
+{% extends "ubiquityOSI/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="section secondary-section " id="portfolio">
+<!-- Portfolio section start -->
+            <div class="triangle"></div>
+        <div class="container">
+                <div class=" title">
+                    <h1>What Kind of Service Do you Need ?</h1>
+                    <h2>Here Are Some Categories </h2>
+                </div>
+<!-- Start details for portfolio project 1 -->
+
+
+ <div id="single-project">
+     <div id="slidingDiv" class="row-fluid single-project">
+        <div class="span6">
+            <img src="{{ object.image.url }}" alt="post-services" />
+        </div>
+        <div class="span6">
+            <div class="project-description">
+                <div class="project-title clearfix">
+                    <h3>{{ object.title }}</h3>
+<!--                    <span class="show_hide close">-->
+<!--                        <i class="icon-cancel"></i>-->
+<!--                    </span>-->
+                </div>
+                <div class="project-info">
+                    <div>
+                        <span>Client</span>{{ object.author }}</div>
+                    <div>
+                        <span>Date</span>{{ object.date_posted|date:"F d, Y" }}</div>
+                    <div>
+                        <span>Skills</span>{{ object.title }}</div>
+                    <div>
+                        <span>Link</span>http://examplecomp.com</div>
+                </div>
+                <p class="pr">{{ object.description_content }}</p>
+            </div>
+
+            {% if object.author == user %}
+                <div>
+                 <p class="btn btn-outline-secondary mt-1 mb-1" ><a href="{% url 'service-update' object.id %}"> Update </a></p>
+                 <p class="btn btn-outline-danger mt-1 mb-1" ><a href="{% url 'service-delete' object.id %}"> Delete </a></p>
+                </div>
+            {% endif %}
+        </div>
+     </div>
+
+     </div>
+    </div>
+
+</div>
+
+   <!-- Footer section start -->
+        <div class="footer">
+            <p>&copy; 2020 Web App by <a href="#">Knowledge Seekers Group</a></p>
+        </div>
+        <!-- Footer section end -->
+        <!-- ScrollUp button start -->
+        <div class="scrollup">
+            <a href="#">
+                <i class="icon-up-open"></i>
+            </a>
+
+        </div>
+
+{% endblock content %}
