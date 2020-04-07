@@ -86,11 +86,27 @@
                         <ul class="nav" id="top-navigation">
                             <li class="active"><a href="{% url 'home-page' %}">Home</a></li>
                             {% if user.is_authenticated %}
-                                <li><a href="{% url 'services-page' %}">Services</a></li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle bb1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  services
+                                </a>
+                                <div class="dropdown-menu bb" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item btn btn-navbar" href="{% url 'services-page' %}">Services</a>
+                                    <a class="dropdown-item btn btn-navbar" href="{% url 'post-services' %}">View All Services</a>
+                                </div>
+                            </li>
                                 <li><a href="{% url 'create-post' %}">Post a Service</a></li>
-                                <li><a href="{% url 'profile' %}">Profile</a></li>
-                                <li><a href="{% url 'logout' %}">Logout</a></li>
-                                <li><a href="{% url 'user-post-services' user.username %}">My Posted Services </a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  my info.
+                                </a>
+                                <div class="dropdown-menu bb" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item btn btn-navbar" href="{% url 'profile' %}">Profile</a>
+                                    <a class="dropdown-item btn btn-navbar" href="{% url 'user-post-services' user.username %}">My Posted Services</a>
+                                    <a class="dropdown-item btn btn-navbar" href="{% url 'logout' %}">Logout</a>
+                                </div>
+                            </li>
                             {% else %}
                                 <li><a href="{% url 'create-post' %}">Post a Service</a></li>
                                 <li><a href="{% url 'login' %}">Login</a></li>
@@ -99,12 +115,15 @@
                             <li><a href="#about">About</a></li>
                         </ul>
                     </div>
+
                     <!-- End main navigation -->
                 </div>
+                <!-- Default checked -->
+
             </div>
         </div>
 <!-- End main navigation -->
-
+<div class="section secondary-section">
         {% if messages %}
                 {% for message in messages %}
                   <div class="alert alert-{{ message.tags }} ">
@@ -114,7 +133,7 @@
         {% endif %}
 
     {% block content %}{% endblock content %}
-
+</div>
 
 
 <!--    login page-->

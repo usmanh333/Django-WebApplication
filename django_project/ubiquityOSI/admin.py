@@ -1,4 +1,17 @@
 from django.contrib import admin
-from .models import PostServices
+from .models import PostServices,Category
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug')
+    prepopulated_fields = {'slug': ('name',)}
+
+
+admin.site.register(Category, CategoryAdmin)
+
+
+# class PostServicesAdmin(admin.ModelAdmin):
+#     list_display = ('author', 'date_posted', 'category_posted')
+# PostServicesAdmin
 
 admin.site.register(PostServices)

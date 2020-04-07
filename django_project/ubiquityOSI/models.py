@@ -5,22 +5,47 @@ from django.urls import reverse
 from PIL import Image
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+
+    def get_absolute_url(self):
+        return reverse('list_of_post_by_category', args=[self.slug])
+
+    def __str__(self):
+        return self.name
+
+
 class PostServices(models.Model):
-    title = models.CharField(max_length=100)
-    description_content = models.TextField()
+    service_title = models.CharField(max_length=100, verbose_name='<font size="3.5"><b>Enter Services Title:'
+                                                                  '</b></font> <br>'
+                                                                  ' (Hint: Usman Ahmad as a Web Developer) ')
+    skills_description = models.TextField(verbose_name='<font size="3.5"><b>Enter Skills/Work Description</b></font> ')
+    enter_price = models.TextField(verbose_name='<font size="3.5"><b>Enter Prices :- </b></font><br>'
+                                                ' Related with Skills/Work/Product <br>'
+                                                '(Hint: Logo Design Price = 1000Rs/$) etc')
+    phone = models.IntegerField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='default.jpg', upload_to='post-services')
+    category = models.ManyToManyField(Category, verbose_name='<font size="3.5"><b>Select Category Below:</b></font> ')
+    category_posted = models.BooleanField(default=True)
+    select_image = models.ImageField(default='default.jpg', upload_to='post-services',
+                                     verbose_name='<font size="3.5"><b>Select Image (Optional)</b></font>')
 
     def save(self, *args, **kwargs):
         super(PostServices, self).save(*args, **kwargs)
 
-        img = Image.open(self.image.path)
+        img = Image.open(self.select_image.path)
 
         if img.height > 300 or img.width > 300:
             output_size = (300, 300)
             img.thumbnail(output_size)
-            img.save(self.image.path)
+            img.save(self.select_image.path)
 
     def __str__(self):
         return f' {self.author} (Posted Services)'

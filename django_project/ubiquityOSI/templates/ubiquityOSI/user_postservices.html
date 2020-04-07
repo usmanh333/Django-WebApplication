@@ -16,53 +16,19 @@
                 </ul>
 
 <!-- Start details for portfolio project 1 -->
-
-{% for post in posts %}
+<div class="row">
  <div id="single-project">
-     <div id="slidingDiv" class="toggleDiv row-fluid single-project">
-        <div class="span6">
-            <img src="{{ post.image.url }}" alt="post-services" />
-        </div>
-        <div class="span6">
-            <div class="project-description">
-                <div class="project-title clearfix">
-                    <h3>{{ post.title }}</h3>
-                    <span class="show_hide close">
-                        <i class="icon-cancel"></i>
-                    </span>
-                </div>
-                <div class="project-info">
-                    <div>
-                        <span>Client</span>{{ post.author }}</div>
-                    <div>
-                        <span>Date</span>{{ post.date_posted|date:"F d, Y" }}</div>
-                    <div>
-                        <span>Skills</span>{{ post.title }}</div>
-                    <div>
-                        <span>Link</span>http://examplecomp.com</div>
-                </div>
-                <p class="pr">{{ post.description_content }}</p>
-                <p class="filter" data-filter="photo">
-                        <a class="btn btn-outline-info" href="{% url 'service-detail' post.id %}">Read More...</a>
-                    </p>
-            </div>
-        </div>
-     </div>
-
-
-
-
-
-
     <ul id="portfolio-grid" class="thumbnails row">
+{% for post in posts %}
+
         <li class="span4 mix web">
             <div class="thumbnail">
-                <img src="{{ post.image.url }}" alt="post-services">
+                <img src="{{ post.select_image.url }}" alt="post-services">
                 <a href="{% url 'service-detail' post.id %}" class="more" rel="#slidingDiv">
                     <i class="icon-plus"></i>
                 </a>
-                <h3>{{ post.title }}</h3>
-                <p> {{ post.description_content }} </p>
+                <h3>{{ post.service_title }}</h3>
+                <p> {{ post.skills_description }} </p>
                 <p>{{ post.date_posted|date:"F d, Y" }}</p>
                 <div class="mask"></div>
             </div>
