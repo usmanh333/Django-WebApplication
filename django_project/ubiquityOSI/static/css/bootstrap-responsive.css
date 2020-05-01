@@ -888,13 +888,14 @@
 }
 
 @media (max-width: 480px) {
-  .nav-collapse {
+.nav-collapse {
+  transform: scaleX(45);
     -webkit-transform: translate3d(0, 0, 0);
-  }
-  .page-header h1 small {
+}
+.page-header h1 small {
     display: block;
     line-height: 20px;
-  }
+}
   input[type="checkbox"],
   input[type="radio"] {
     border: 1px solid #ccc;
@@ -918,7 +919,7 @@
   .media .pull-left,
   .media .pull-right {
     display: block;
-    float: none;
+    float: right;
     margin-bottom: 10px;
   }
   .media-object {

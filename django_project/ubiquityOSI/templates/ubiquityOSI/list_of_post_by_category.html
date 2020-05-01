@@ -25,9 +25,9 @@
                         <i class="icon-plus"></i>
                     </a>
                     <h3>{{ post.service_title }}</h3>
-                    <p>{{ post.date_posted|date:"F d, Y" }}</p>
-                    <a href="{% url 'user-post-services' post.author.username %}"> <p>Posted By : {{ post.author }}</p></a>
-                    <p>Category : {{ category.name }}</p>
+                    <p class="pr">{{ post.date_posted|date:"F d, Y" }}</p>
+                    <a href="{% url 'user-post-services' post.author.username %}"> <p class="pr">Posted By : {{ post.author }}</p></a>
+                    <p class="pr">Category : {{ category.name }}</p>
                     <div class="mask"></div>
                 </div>
             </li>

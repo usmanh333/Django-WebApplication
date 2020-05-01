@@ -1033,7 +1033,7 @@ button,
 select,
 textarea {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+
   /* IE7-8 doesn't have border-radius, so don't indent the padding */
 
   margin-bottom: 0;
@@ -2400,7 +2400,7 @@ input[type="submit"].btn.btn-mini {
 
 .nav {
   margin-bottom: 20px;
-  margin-left: 0;
+  margin-left: 5px;
   list-style: none;
 }
 
@@ -2955,7 +2955,7 @@ input[type="submit"].btn.btn-mini {
 
 .navbar-search {
   position: relative;
-  float: ;
+  /* float: ; */
   margin-top: 5px;
   margin-bottom: 0;
 }
@@ -3085,8 +3085,8 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar .btn-navbar {
-  display: inline-block;
-  float: right;
+  display: block;
+  /* float: right; */
   padding: 7px 10px;
   margin-right: 5px;
   margin-left: 5px;
@@ -3116,7 +3116,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .btn-navbar.disabled,
 .navbar .btn-navbar[disabled] {
   color: #ffffff;
-  background-color: #e5e5e5;
+  background-color: #FECE1A;
   *background-color: #d9d9d9;
 }
 
@@ -3190,7 +3190,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   color: #fff;
-  background-color: ##181A1C;
+  background-color: #181A1C;
 }
 
 .navbar .nav li.dropdown > .dropdown-toggle .caret {

@@ -20,6 +20,27 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+class Location(models.Model):
+    name = models.CharField(max_length=100)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'location'
+
+    def __str__(self):
+        return self.name
+
+class Area(models.Model):
+    name = models.CharField(max_length=100)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'area'
+        verbose_name_plural = 'areas'
+
+    def __str__(self):
+        return self.name
+
 
 class PostServices(models.Model):
     service_title = models.CharField(max_length=100, verbose_name='<font size="3.5"><b>Enter Services Title:'
@@ -29,10 +50,13 @@ class PostServices(models.Model):
     enter_price = models.TextField(verbose_name='<font size="3.5"><b>Enter Prices :- </b></font><br>'
                                                 ' Related with Skills/Work/Product <br>'
                                                 '(Hint: Logo Design Price = 1000Rs/$) etc')
-    phone = models.IntegerField()
+    phone = models.IntegerField(verbose_name='<font size="3.5"><b>Enter Contact No.</b></font>'
+                                                '<br>(Hint: 03xx xxxxxxx)')
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category, verbose_name='<font size="3.5"><b>Select Category Below:</b></font> ')
+    location = models.ForeignKey(Location, verbose_name= '<font size="3.5"><b>Select Location Below:</b></font>', on_delete=models.CASCADE)
+    area = models.ForeignKey(Area, verbose_name= '<font size="3.5"><b>Select Area Below:</b></font> <br> (Select Area Nearest to your Location [Select Carefully])', on_delete=models.CASCADE)
     category_posted = models.BooleanField(default=True)
     select_image = models.ImageField(default='default.jpg', upload_to='post-services',
                                      verbose_name='<font size="3.5"><b>Select Image (Optional)</b></font>')

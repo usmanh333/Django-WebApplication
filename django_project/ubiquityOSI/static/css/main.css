@@ -41,45 +41,46 @@ div .bb:hover{
 bb1{
     background-color:#181A1C;
 }
-/* Services redirect category button
+/* Services redirect category button */
+
 div .bouncy{
- animation:bouncy 5s infinite linear;
- position:relative;
+    animation: bouncy 5s infinite linear;
+    position:relative;
 }
 @keyframes bouncy {
- 0%{top:0em}
- 40%{top:0em}
- 43%{top:-0.9em}
- 46%{top:0em}
- 48%{top:-0.4em}
- 50%{top:0em}
- 100%{top:0em;}
+    0%{top:0em}
+    40%{top:0em}
+    43%{top:-0.9em}
+    46%{top:0em}
+    48%{top:-0.4em}
+    50%{top:0em}
+    100%{top:0em;}
 }
 
 button{
-     display:inline-block;
-     padding:0.3em 1.2em;
-     margin:0 0.3em 0.3em 0;
-     border-radius:2em;
-     box-sizing: border-box;
-     text-decoration:none;
-     font-family:'Roboto',sans-serif;
-     font-weight:300;
-     color:#FFFFFF;
-     background-color:#4eb5f1;
-     text-align:center;
-     transition: all 0.2s;
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
 }
 p .button3:hover{
- background-color:#4095c6;
+    background-color:#4095c6;
 }
 @media all and (max-width:30em){
 p .button3{
-  display:block;
-  margin:0.2em auto;
- }
+    display:block;
+    margin:0.2em auto;
 }
-Services redirect category button */
+}
+/* Services redirect category button */
 
 .navbar-fixed-top {
     min-height:60px;
@@ -211,11 +212,11 @@ Services redirect category button */
     -moz-transform: scale(1, 1);
     -o-transform: scale(1, 1);
     -ms-transform: scale(1, 1);
+    transition: all 250ms ease;
     -webkit-transition: all 250ms ease;
     -moz-transition: all 250ms ease;
     -o-transition: all 250ms ease;
     -ms-transition: all 250ms ease;
-    transition: all 250ms ease;
 }
 .zoom-in:hover {
     -webkit-transform: scale(1.1, 1.1);
@@ -337,7 +338,7 @@ Services redirect category button */
     list-style: none;
     float: none;
     position:relative;
-    margin:5px; auto;
+    margin:5px auto;
 }
 .social li {
     display:inline-block;
@@ -364,6 +365,9 @@ Services redirect category button */
 }*/
 .section .container {
     padding-top:50px;
+}
+div .sec{
+    text-align: center;
 }
 .section .title {
     text-align: center;
@@ -401,13 +405,13 @@ Services redirect category button */
 .secondary-section .title {
     border-bottom: 1px solid #181A1C;
 }
-.secondary-section h1, .secondary-section .title p {
+/* .secondary-section h1, .secondary-section .title p {
     color: #181A1C;
-}
+} */
 /* Third section use bacground image */
 .third-section {
     padding-bottom: 70px;
-    background: #181A1C url({% static 'images/brand-bg.png' %}) no-repeat center;
+    background: #181A1C url('../images/brand-bg.png') no-repeat center;
     border-top:6px solid #FECE1A;
 }
 .third-section .container {
@@ -478,8 +482,20 @@ Services redirect category button */
 .project-info,
 .pr{
     font-weight:100;
+    font-size: 16px;
     padding:10px 0;
     color:#fff;
+}
+.prr{
+    text-transform: uppercase;
+}
+.prrr{
+    color:#181A1C;
+    /* text-align: justify; */
+    display: inline-block;
+}
+.pr4{
+    font-weight: 900;
 }
 .project-info span {
     width: 139px;
@@ -881,3 +897,24 @@ Services redirect category button */
 
 
 
+ /* // General Styling
+ // Requires Bootstrap 3 for styling */
+ 
+ body { background-color: #f5f5f5; }
+ 
+ .contacta {
+   background-color: #fff;
+   padding: 15px;
+   max-width: 200px;
+   margin: 30px auto;
+ }
+ 
+ .icon {
+   width: 16px;
+   height: 16px;
+   padding: 0;
+   margin: 0;
+   vertical-align: middle;
+ }
+ 
+ 

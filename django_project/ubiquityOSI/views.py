@@ -67,7 +67,7 @@ class ServiceDetailView(DetailView):
 
 class ServiceCreateView(LoginRequiredMixin, CreateView):
     model = PostServices
-    fields = ['service_title', 'skills_description', 'enter_price', 'phone', 'category', 'select_image']
+    fields = ['service_title', 'skills_description', 'enter_price', 'phone', 'location', 'area', 'category', 'select_image']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -76,7 +76,7 @@ class ServiceCreateView(LoginRequiredMixin, CreateView):
 
 class ServiceUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView, ABC):
     model = PostServices
-    fields = ['service_title', 'skills_description', 'enter_price', 'phone', 'category', 'select_image']
+    fields = ['service_title', 'skills_description', 'enter_price', 'phone', 'location', 'area', 'category', 'select_image']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -103,3 +103,7 @@ class ServiceDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 @login_required
 def services(request):
     return render(request, 'ubiquityOSI/services.html', {'title': 'Services'})
+
+
+def about(request):
+    return render(request, 'ubiquityOSI/about.html', {'title': 'About'})

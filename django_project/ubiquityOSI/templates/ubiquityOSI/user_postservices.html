@@ -6,7 +6,7 @@
             <div class="triangle"></div>
         <div class="container">
                 <div class=" title">
-                    <b><h1> Services Post By <b>{{ view.kwargs.username }} ({{ page_obj.paginator.count }})</b></h1> </b>
+                    <b><h1> Services Post By <b class="prr">{{ view.kwargs.username }} ({{ page_obj.paginator.count }})</b></h1> </b>
                     <h2>Here Are Your Posted Services </h2>
                 </div>
             <ul class="nav nav-pills">
@@ -28,7 +28,6 @@
                     <i class="icon-plus"></i>
                 </a>
                 <h3>{{ post.service_title }}</h3>
-                <p> {{ post.skills_description }} </p>
                 <p>{{ post.date_posted|date:"F d, Y" }}</p>
                 <div class="mask"></div>
             </div>

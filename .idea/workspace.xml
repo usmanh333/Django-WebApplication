@@ -57,7 +57,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/Scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Web Application templates/pluton" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
@@ -209,9 +209,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="419" y="129" key="EnvironmentVariablesDialog/0.0.1366.728@0.0.1366.728" timestamp="1584782701572" />
-    <state x="463" y="120" width="430" height="488" key="FileChooserDialogImpl" timestamp="1584786422658">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="461" y="120" width="430" height="488" key="FileChooserDialogImpl" timestamp="1587028863872">
+      <screen x="0" y="0" width="1360" height="728" />
     </state>
+    <state x="461" y="120" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1587028863872" />
     <state x="463" y="120" width="430" height="488" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584786422658" />
     <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1582022749333">
       <screen x="0" y="0" width="1366" height="728" />

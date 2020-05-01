@@ -14,7 +14,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'porta';
-    src: url({% static 'font/porta.svg?49924914#porta' %}) format('svg');
+    src: url('font/porta.svg?49924914#porta') format('svg');
   }
 }
 

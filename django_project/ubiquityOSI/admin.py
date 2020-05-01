@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PostServices,Category
+from .models import PostServices,Category,Location,Area
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -15,3 +15,5 @@ admin.site.register(Category, CategoryAdmin)
 # PostServicesAdmin
 
 admin.site.register(PostServices)
+admin.site.register(Location)
+admin.site.register(Area)
