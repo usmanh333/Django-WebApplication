@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+        <!--  main page  -->
+        <!-- Load Roboto font -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <!-- Load css styles -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-responsive.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/pluton.css' %}" />
+        <!--[if IE 7]-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/pluton-ie7.css' %}" />
+        <!--[endif]-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.cslider.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.bxslider.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}" />
+        <!-- Fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'images/ico/apple-touch-icon-144.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'images/ico/apple-touch-icon-114.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'images/apple-touch-icon-72.png' %}">
+        <link rel="apple-touch-icon-precomposed" href="{% static 'images/ico/apple-touch-icon-57.png' %}">
+        <link rel="shortcut icon" href="{% static 'images/ico/favicon.ico' %}">
+
+
+    <!--    login,sign up,profile and logout pages -->
+    <!--===============================================================================================-->
+    	<link rel="icon" type="image/png" href="{% static 'users_images/icons/favicon.ico' %}"/>
+    <!--===============================================================================================-->
+    	<link rel="icon" type="image/png" href="{% static 'users_images/icons/favicon.ico' %}"/>
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'users_vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'users_fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'users_fonts/iconic/css/material-design-iconic-font.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'users_vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'users_vendor/css-hamburgers/hamburgers.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'users_vendor/animsition/css/animsition.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'users_vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'users_vendor/daterangepicker/daterangepicker.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'users_css/login.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'users_css/util.css' %}">
+    <!--===============================================================================================-->
+
+    {% if title %}
+        <title>Ubiquity - {{ title }}</title>
+    {% else %}
+        <title>Ubiquity</title>
+    {% endif %}
+
+
+<!--{% static '' %}-->
+
+</head>
+<body>
+ <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a href="{% url 'home-page' %}" class="brand">
+                        <img src="{% static 'images/logo000.png' %}" alt="Logo" />
+                        <!-- This is website logo -->
+                    </a>
+                    <!-- Navigation button, visible on small resolution -->
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <i class="icon-menu"></i>
+                    </button>
+                    <!-- Main navigation -->
+                    <div class="nav-collapse collapse pull-left">
+                        <ul class="nav" id="top-navigation">
+                            <li class="active"><a href="{% url 'home-page' %}">Home</a></li>
+                            {% if user.is_authenticated %}
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle bb1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  services
+                                </a>
+                                <div class="dropdown-menu bb" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item btn btn-navbar" href="{% url 'services-page' %}">Services</a>
+                                    <a class="dropdown-item btn btn-navbar" href="{% url 'post-services' %}">View All Services</a>
+                                </div>
+                            </li>
+                                <li><a href="{% url 'create-post' %}">Post a Service</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  my info.
+                                </a>
+                                <div class="dropdown-menu bb" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item btn btn-navbar" href="{% url 'profile' %}">Profile</a>
+                                    <a class="dropdown-item btn btn-navbar" href="{% url 'user-post-services' user.username %}">My Posted Services</a>
+                                    <a class="dropdown-item btn btn-navbar" href="{% url 'logout' %}">Logout</a>
+                                </div>
+                            </li>
+                            {% else %}
+                                <li><a href="{% url 'create-post' %}">Post a Service</a></li>
+                                <li><a href="{% url 'login' %}">Login</a></li>
+                                <li><a href="{% url 'register' %}">Register</a></li>
+                            {% endif %}
+                            <li><a href="{% url 'about' %}">About</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- End main navigation -->
+                </div>
+                <!-- Default checked -->
+
+            </div>
+        </div>
+<!-- End main navigation -->
+<div class="section secondary-section">
+        {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-{{ message.tags }} ">
+                      {{ message }}
+                  </div>
+                {% endfor %}
+        {% endif %}
+
+    {% block content %}{% endblock content %}
+</div>
+
+
+<!--    login page-->
+    <!--===============================================================================================-->
+        <script src="{% static 'users_vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'users_vendor/animsition/js/animsition.min.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'users_vendor/bootstrap/js/popper.js' %}"></script>
+        <script src="{% static 'users_vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'users_vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'users_vendor/daterangepicker/moment.min.js' %}"></script>
+        <script src="{% static 'users_vendor/daterangepicker/daterangepicker.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'users_vendor/countdowntime/countdowntime.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'users_js/main.js' %}"></script>
+
+
+        <!--  main page  -->
+        <!-- Include javascript -->
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.mixitup.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/modernizr.custom.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.bxslider.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.cslider.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.placeholder.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.inview.js' %}"></script>
+        <!-- Load google maps api and call initializeMap function defined in app.js -->
+        <!-- <script async="" defer="" type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initializeMap"></script> -->
+        <!-- css3-mediaqueries.js for IE8 or older -->
+        <!--[if lt IE 9]-->
+            <script src="{% static 'js/respond.min.js' %}"></script>
+        <!--[endif]-->
+        <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+
+
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

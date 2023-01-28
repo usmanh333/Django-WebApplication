@@ -1,0 +1,59 @@
+{% extends "ubiquityOSI/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="section secondary-section">
+	<div class="limiter">
+	 <div class="container-login100">
+		<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+			<form method="POST" enctype="multipart/form-data" class="login100-form validate-form">
+						<span class="login100-form-title p-b-49">
+							Delete Service
+						</span>
+							{% csrf_token %}
+				<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
+                    <h2> Are you sure you want to delete this post ({{ object.service_title }}) </h2>
+<!--					<fieldset class="form-group">-->
+<!--					</fieldset>-->
+				</div>
+					<br>
+				<div class="form-group">
+					<div class="container-login100-form-btn">
+					<div class="wrap-login100-form-btn">
+					<div class="login100-form-bgbtn"></div>
+					<button class="btn btn-outline-danger login100-form-btn" type="submit">
+									Yes, Delete
+					</button>
+				</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="container-login100-form-btn">
+					<div class="wrap-login100-form-btn">
+					<div class="login100-form-bgbtn"></div>
+					<a class="login100-form-btn" href="{% url 'service-detail' object.id %}">
+                            Cancel
+                    </a>
+				</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	 </div>
+ </div>
+</div>
+
+	<div id="dropDownSelect1"></div>
+
+   <!-- Footer section start -->
+        <div class="footer">
+            <p>&copy; 2020 Web App by <a href="#">Knowledge Seekers Group</a></p>
+        </div>
+        <!-- Footer section end -->
+        <!-- ScrollUp button start -->
+        <div class="scrollup">
+            <a href="#">
+                <i class="icon-up-open"></i>
+            </a>
+        </div>
+{% endblock content %}

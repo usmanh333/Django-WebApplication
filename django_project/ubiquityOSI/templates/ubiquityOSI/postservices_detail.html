@@ -1,0 +1,84 @@
+{% extends "ubiquityOSI/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="section secondary-section " id="portfolio">
+<!-- Portfolio section start -->
+            <div class="triangle"></div>
+        <div class="container">
+                <div class=" title">
+                    <h1>Service Provider Details</h1>
+                    <h2>Detailed Information of <b class="prr"> ({{ object.author }}) </b> </h2>
+                </div>
+<!-- Start details for portfolio project 1 -->
+
+
+ <div id="single-project">
+     <div id="slidingDiv" class="row-fluid single-project">
+        <div class="span6">
+            <img src="{{ object.select_image.url }}" alt="post-services" />
+        </div>
+        <div class="span6">
+            <div class="project-description">
+                <div class="project-title clearfix">
+                    <h3>{{ object.service_title }}</h3>
+                </div>
+                <div class="project-info">
+                    <div class="prr">
+                        <span>Name :</span>{{ object.author }}</div>
+                    <div>
+                        <span>Date:</span>{{ object.date_posted|date:"F d, Y" }}</div>
+                    <div>
+                        <span>Skills : </span>{{ object.service_title }}</div>
+                    <div>
+                        <span class="mt-2">Work/Skills Price : </span><p class="pr">{{ object.enter_price }}</p></div>
+                    <div>
+                        <span>Phone Number: </span>0{{ object.phone }}</div>
+
+                    <div class="mt-3 mb-2">
+                        <span>Area Near By </span>{{ object.area }} <br><span>({{object.location}}): </span>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-copy js-tooltip js-copy" data-toggle="tooltip" data-placement="bottom" data-copy="{{ object.area }}" title="Copy Area from clickng here and then paste it to google map too see user/worker location...">
+                                <!-- icon from google's material design library -->
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M17,9H7V7H17M17,13H7V11H17M14,17H7V15H14M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z" /></svg>
+                            </button>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="mt-2 mb-2">
+                        <span class="mb-2">User Location: </span>{{ object.location }}<a class="btn" title="You need to copy area first and paste it on google map...then you will get the accurate user location...." target="_blank" href="https://www.google.com/maps/place/Gulberg+III,+Lahore,+Punjab/@31.5100979,74.3368068,15z/data=!4m5!3m4!1s0x3919045a28ff1d39:0xf71e739b84b3c3c!8m2!3d31.5101892!4d74.3440842">Click here to see on Google map (Copy Area First)</a></div>
+
+                    <div>
+                        <span class="mt-2 mb-2 mr-2 "><font>Skills Description : </font></span><p class="pr">{{ object.skills_description }}</p>
+                    </div>
+                </div>
+            </div>
+
+            {% if object.author == user %}
+                <div class="mb-3">
+                 <p class="btn btn-outline-secondary mt-1 mb-1" ><a href="{% url 'service-update' object.id %}"> Update </a></p>
+                 <p class="btn btn-outline-danger mt-1 mb-1" ><a href="{% url 'service-delete' object.id %}"> Delete </a></p>
+                </div>
+            {% endif %}
+        </div>
+     </div>
+
+     </div>
+    </div>  
+</div>
+
+   <!-- Footer section start -->
+        <div class="footer">
+            <p>&copy; 2020 Web App by <a href="#">Knowledge Seekers Group</a></p>
+        </div>
+        <!-- Footer section end -->
+        <!-- ScrollUp button start -->
+        <div class="scrollup">
+            <a href="#">
+                <i class="icon-up-open"></i>
+            </a>
+
+        </div>
+
+{% endblock content %}

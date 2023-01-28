@@ -1,0 +1,77 @@
+{% extends "ubiquityOSI/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="section secondary-section " id="portfolio">
+            <div class="triangle"></div>
+        <div class="container">
+                <div class=" title">
+                    <b><h1> Services Post By <b class="prr">{{ view.kwargs.username }} ({{ page_obj.paginator.count }})</b></h1> </b>
+                    <h2>Here Are Your Posted Services </h2>
+                </div>
+            <ul class="nav nav-pills">
+                    <li class="filter" data-filter="all">
+                        <a href="#noAction">All</a>
+                    </li>
+                </ul>
+
+<!-- Start details for portfolio project 1 -->
+<div class="row">
+ <div id="single-project">
+    <ul id="portfolio-grid" class="thumbnails row">
+{% for post in posts %}
+
+        <li class="span4 mix web">
+            <div class="thumbnail">
+                <img src="{{ post.select_image.url }}" alt="post-services">
+                <a href="{% url 'service-detail' post.id %}" class="more" rel="#slidingDiv">
+                    <i class="icon-plus"></i>
+                </a>
+                <h3>{{ post.service_title }}</h3>
+                <p>{{ post.date_posted|date:"F d, Y" }}</p>
+                <div class="mask"></div>
+            </div>
+        </li>
+
+
+{% endfor %}
+        </ul>
+     </div>
+    </div>
+
+
+
+ {% if is_paginated %}
+
+    {% if page_obj.has_previous %}
+        <a class="btn btn-outline-info mb-4" href="?page=1"> First </a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}"> Previous </a>
+    {% endif %}
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <a class="btn btn-info mb-4" href="?page={{ num }}"> {{ num }} </a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a class="btn btn-outline-info mb-4" href="?page={{ num }}"> {{ num }} </a>
+        {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}"> Next </a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}"> Last </a>
+    {% endif %}
+
+ {% endif %}
+
+</div>
+<!-- Footer section start -->
+        <div class="footer">
+            <p>&copy; 2020 Web App by <a href="#">Knowledge Seekers Group</a></p>
+        </div>
+        <!-- Footer section end -->
+        <!-- ScrollUp button start -->
+        <div class="scrollup">
+            <a href="#">
+                <i class="icon-up-open"></i>
+            </a>
+        </div>
+
+{% endblock content %}

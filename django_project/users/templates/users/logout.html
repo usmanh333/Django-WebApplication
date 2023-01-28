@@ -1,0 +1,33 @@
+{% extends "ubiquityOSI/base.html" %}
+{% block content %}
+
+<div id="contact" class="contact"><br>
+<form class="limiter container-login100 wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54 login100-form-title p-b-49 ">
+    <h2>You have been logged out</h2><br>
+
+    <div class="form-group">
+        <div class="container-login100-form-btn">
+        <div class="wrap-login100-form-btn">
+        <div class="login100-form-bgbtn"></div>
+        <button class="login100-form-btn"><a href="{% url 'login' %}">
+                        Login Again?</a>
+        </button>
+        </div>
+    </div>
+    </div>
+</form><br>
+</div>
+        <!-- Footer section start -->
+        <div class="footer">
+            <p>&copy; 2020 Web App by <a href="#">Knowledge Seekers Group</a></p>
+        </div>
+        <!-- Footer section end -->
+        <!-- ScrollUp button start -->
+        <div class="scrollup">
+            <a href="#">
+                <i class="icon-up-open"></i>
+            </a>
+        </div>
+        <!-- ScrollUp button end -->
+
+{% endblock content %}
